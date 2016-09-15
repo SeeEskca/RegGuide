@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "Panel";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@if (RegistrationAdvisory.Models.UserSession.BACKBUTTON == "")
+{
+    <div>
+        @Html.Partial("_controlPanel")
+    </div>
+}
+else
+{
+    <div>
+        @Html.Partial("_studentSummaryPage")
+    </div>
+    RegistrationAdvisory.Models.UserSession.BACKBUTTON = ""; /*To enable display of control panel view if the browser back button is pressed*/
+}

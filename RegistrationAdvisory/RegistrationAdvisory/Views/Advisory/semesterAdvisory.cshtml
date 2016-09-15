@@ -1,0 +1,342 @@
+﻿
+@{
+    ViewBag.Title = "semesterAdvisory";
+}
+
+<h3>semesterAdvisory</h3>
+<h4>@ViewBag.department</h4>
+<div>
+    @if (RegistrationAdvisory.Models.UserSession.DEPTIDOFADVISERVIEW != "")
+    {
+        Layout = "~/Views/Shared/_AdminLayout.cshtml";
+        @Html.ActionLink("Back to Control Panel", "Panel", "Adviser");
+
+    }
+</div>
+
+<div>
+    <table class="table-bordered">
+        <tr>
+            <td>
+                <table class=" table-striped table-bordered table-condensed" width="450">
+                    <tr><td colspan="4"><h3>Semester 1</h3></td></tr>
+                    <tr>
+                        <th>
+                            Course ID
+                        </th>
+                        <th>
+                            Course Name
+                        </th>
+                        <th>
+                            Credit
+                        </th>
+                        
+
+                    </tr>
+
+                    @foreach (var item in ViewBag.sem1)
+                    {
+                        <tr>
+                            <td>
+                                @item.courseId
+                            </td>
+                            <td>
+                                @item.courseName
+                            </td>
+                            <td>
+                                @item.credit
+                            </td>
+                           
+
+                        </tr>
+                    }
+
+                </table>
+            </td>
+            <td>
+                <table class=" table-striped table-bordered table-condensed" width="450">
+                    <tr><td colspan="4"><h3>Semester 2</h3></td></tr>
+                    <tr>
+                        <th>
+                            Course ID
+                        </th>
+                        <th>
+                            Course Name
+                        </th>
+                        <th>
+                            Credit
+                        </th>
+                        
+
+                    </tr>
+
+                    @foreach (var item in ViewBag.sem2)
+                    {
+                        <tr>
+                            <td>
+                                @item.courseId
+                            </td>
+                            <td>
+                                @item.courseName
+                            </td>
+                            <td>
+                                @item.credit
+                            </td>
+                           
+
+                        </tr>
+                    }
+
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <table class=" table-striped table-bordered table-condensed" width="450">
+                    <tr><td colspan="4"><h3>Semester 3</h3></td></tr>
+                    <tr>
+                        <th>
+                            Course ID
+                        </th>
+                        <th>
+                            Course Name
+                        </th>
+                        <th>
+                            Credit
+                        </th>
+                     </tr>
+
+                    @foreach (var item in ViewBag.sem3)
+                    {
+                        <tr>
+                            <td>
+                                @item.courseId
+                            </td>
+                            <td>
+                                @item.courseName
+                            </td>
+                            <td>
+                                @item.credit
+                            </td>
+                         </tr>
+                    }
+                    @if (ViewBag.department == "Computer Engineering")/*table row padding*/
+                    {
+                        <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+                    }
+
+                </table>
+            </td>
+            <td>
+                <table class=" table-striped table-bordered table-condensed" width="450">
+                    <tr><td colspan="4"><h3>Semester 4</h3></td></tr>
+                    <tr>
+                        <th>
+                            Course ID
+                        </th>
+                        <th>
+                            Course Name
+                        </th>
+                        <th>
+                            Credit
+                        </th>
+                       
+
+                    </tr>
+
+                    @foreach (var item in ViewBag.sem4)
+                    {
+                        <tr>
+                            <td>
+                                @item.courseId
+                            </td>
+                            <td>
+                                @item.courseName
+                            </td>
+                            <td>
+                                @item.credit
+                            </td>
+                           
+
+                        </tr>
+                    }
+
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <table class=" table-striped table-bordered table-condensed" width="450">
+                    <tr><td colspan="4"><h3>Semester 5</h3></td></tr>
+                    <tr>
+                        <th>
+                            Course ID
+                        </th>
+                        <th>
+                            Course Name
+                        </th>
+                        <th>
+                            Credit
+                        </th>
+                       
+
+                    </tr>
+
+                    @foreach (var item in ViewBag.sem5)
+                    {
+                        <tr>
+                            <td>
+                                @item.courseId
+                            </td>
+                            <td>
+                                @item.courseName
+                            </td>
+                            <td>
+                                @item.credit
+                            </td>
+                            
+
+                        </tr>
+                    }
+
+                    @if (ViewBag.department == "Computer Engineering")
+                    {
+                        <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+                    }
+
+                </table>
+            </td>
+            <td>
+                <table class=" table-striped table-bordered table-condensed" width="450">
+                    <tr><td colspan="4"><h3>Semester 6</h3></td></tr>
+                    <tr>
+                        <th>
+                            Course ID
+                        </th>
+                        <th>
+                            Course Name
+                        </th>
+                        <th>
+                            Credit
+                        </th>
+                        
+
+                    </tr>
+
+                    @foreach (var item in ViewBag.sem6)
+                    {
+                        <tr>
+                            <td>
+                                @item.courseId
+                            </td>
+                            <td>
+                                @item.courseName
+                            </td>
+                            <td>
+                                @item.credit
+                            </td>
+                            
+
+                        </tr>
+                    }
+
+                    @if (ViewBag.department == "Computer Science")
+                    {
+                        <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+                    }
+
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <table class=" table-striped table-bordered table-condensed" width="450">
+                    <tr><td colspan="4"><h3>Semester 7</h3></td></tr>
+                    <tr>
+                        <th>
+                            Course ID
+                        </th>
+                        <th>
+                            Course Name
+                        </th>
+                        <th>
+                            Credit
+                        </th>
+                       
+
+                    </tr>
+
+                    @foreach (var item in ViewBag.sem7)
+                    {
+                        <tr>
+                            <td>
+                                @item.courseId
+                            </td>
+                            <td>
+                                @item.courseName
+                            </td>
+                            <td>
+                                @item.credit
+                            </td>
+                           
+
+                        </tr>
+                    }
+                    @if (ViewBag.department == "Computer Science")
+                    {
+                        <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                        <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                    }
+
+                </table>
+            </td>
+            <td>
+                <table class=" table-striped table-bordered table-condensed" width="450">
+                    <tr><td colspan="4"><h3>Semester 8</h3></td></tr>
+                    <tr>
+                        <th>
+                            Course ID
+                        </th>
+                        <th>
+                            Course Name
+                        </th>
+                        <th>
+                            Credit
+                        </th>
+                       
+
+                    </tr>
+
+                    @foreach (var item in ViewBag.sem8)
+                    {
+                        <tr>
+                            <td>
+                                @item.courseId
+                            </td>
+                            <td>
+                                @item.courseName
+                            </td>
+                            <td>
+                                @item.credit
+                            </td>
+                           
+
+                        </tr>
+                    }
+                    @if (ViewBag.department == "Computer Engineering")
+                    {
+                        <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                        <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                    }
+
+                </table>
+            </td>
+        </tr>
+
+
+    </table>
+</div>
+

@@ -1,0 +1,36 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h2>Computer Science and Engineering Undergraduate Registration Advisory</h2>
+    <hr/>
+   
+    <p>
+            @Html.ActionLink("View Registration Status", "RegStatus", "Advisory", null, new { @class = "btn btn-link btn-lg"})
+            @Html.ActionLink("View Registration Advisory", "StudentAdvisory", "Advisory", null, new { @class = "btn btn-link btn-lg" })
+            @*<a href="#" class="btn btn-link btn-lg">Show Registration Status &raquo;</a>
+            <a href="#" class="btn btn-link btn-lg">Show Registration Advisory &raquo;</a>*@
+   
+</p>
+</div>
+
+<div class="row" id="rowshade">
+    <div class="col-md-4">
+        <h3>About Your Pre-Requisites</h3>
+        <p>
+           Find information about your prerequisite courses
+        </p>
+        <p><a class="btn btn-link" href="#">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h3>About Your Elective Courses</h3>
+        <p>See all elective courses and relevant information</p>
+        <p><a class="btn btn-link" href="#">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h3>About Per Session Courses</h3>
+        <p>See course offered only once in a session and contact your adviser for guidance</p>
+        <p><a class="btn btn-link" href="#">Learn more &raquo;</a></p>
+    </div>
+</div>

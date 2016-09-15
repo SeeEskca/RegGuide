@@ -1,0 +1,15 @@
+﻿
+    <ul class="nav navbar-nav navbar-right">
+        
+        @if (RegistrationAdvisory.Models.UserSession.USERNAME == "")
+        {
+           <li>@Html.ActionLink("Sign in", "Login", "Account")</li>
+        }   
+        else
+        {
+            <li><span style="color:black;font-size:large;">@RegistrationAdvisory.Models.UserSession.DISPLAYNAME</span></li>
+           <li>@Html.ActionLink("SignOut", "Logout", "Account")</li>
+        }
+       
+    </ul>
+

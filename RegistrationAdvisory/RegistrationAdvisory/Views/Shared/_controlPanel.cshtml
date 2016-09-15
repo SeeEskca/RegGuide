@@ -1,0 +1,88 @@
+﻿
+@{
+    ViewBag.Title = "Department Adviser's View";
+}
+
+<h2>@ViewBag.Title</h2>
+<h3>View Department Courses By Semester</h3>
+<a href="@Url.Action("StudentAdvisory", "Advisory", new { deptId = 2 })">Computer Engineering</a><br />
+<a href="@Url.Action("StudentAdvisory", "Advisory", new { deptId = 1 })">Computer Sciencet</a>
+<hr />
+<span style="color:red; font-size:large;">@ViewBag.error</span>
+<table class="table">
+    <tr>
+        <td><h3>View Student Information</h3></td>
+        <td><h3>Manage Student</h3></td>
+        <td><h3>Manage Courses</h3></td>
+    </tr>
+    <tr>
+        
+        <td>
+            @using (Html.BeginForm())
+            {
+                <div class="form-horizontal">
+                    <div class="form-group">
+                        @Html.Label("StudentID", new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.TextBox("id", null, new { @class = "form-control", required = "required" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="View Student's Summary" class="btn btn-default" />
+                        </div>
+                    </div>
+                </div>
+            }
+        </td>
+        <td>
+            <table class="table-condensed">
+                <tr>
+                    <td>@Html.ActionLink("Register Student", "Register", "Account")</td>
+                </tr>
+            </table>
+         </td>
+        <td>
+            <table class="table-condensed">
+                <tr>
+                    <td>
+                        @Html.ActionLink("Add a Course", "AddCourse", "Adviser")
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.ActionLink("Delete a Course", "DeleteCourse", "Adviser")
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.ActionLink("Modify a Course", "ModifyCourse", "Adviser")
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.ActionLink("Add / Update Student Grade/TR", "AddUpdateGrade", "Adviser")
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.ActionLink("Register Student for a Course", "registerStudentForCourse", "Adviser")
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.ActionLink("Add /Remove Pre-requisite", "addRemovePrequisite", "Adviser")
+                    </td>
+                </tr>
+            </table>
+
+        </td>
+    </tr>
+
+</table>
+<br />
+<hr />
+<h3>View Current Recommendation</h3>
+<a href="@Url.Action("semesterAdvisory", "Advisory", new { deptId = 2 })">Computer Engineering</a><br />
+<a href="@Url.Action("semesterAdvisory", "Advisory", new { deptId = 1 })">Computer Science</a>

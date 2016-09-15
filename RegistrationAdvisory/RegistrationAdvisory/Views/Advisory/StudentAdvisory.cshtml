@@ -1,0 +1,109 @@
+﻿@model IEnumerable<RegistrationAdvisory.Models.AdvisoryModel>
+
+@{
+    ViewBag.Title = "Available Courses-";
+}
+
+<div><h3 style="margin-right:20px;">@ViewBag.Title @ViewBag.semester</h3>
+    <h4>@ViewBag.department</h4>
+    @if (RegistrationAdvisory.Models.UserSession.DEPTIDOFADVISERVIEW != "")
+    {
+        Layout = "~/Views/Shared/_AdminLayout.cshtml";
+        @Html.ActionLink("Back to Control Panel", "Panel", "Adviser");
+    }
+<hr />
+ View pending @Html.ActionLink(" Pre-requisite(s)", "studentPreRequisite", "Advisory")
+</div>
+
+   <div  style="float: left; margin-right:20px;">
+    <table class=" table-striped table-bordered table-condensed">
+        <tr><td colspan="4"><h3>Main Courses</h3></td></tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.courseId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.courseName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.offering)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.credit)
+            </th>
+
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.courseId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.courseName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.offering)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.credit)
+                </td>
+               
+            </tr>
+        }
+
+    </table>
+</div>
+
+
+   
+           <div>
+               
+                <table class=" table-striped table-bordered table-condensed">
+                    <tr><td colspan="4"><h3>Electives</h3></td></tr>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.courseId)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.courseName)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.offering)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.credit)
+                        </th>
+
+                    </tr>
+
+                    @foreach (var item in ViewBag.electives)
+                    {
+                        <tr>
+                            <td>
+                                @item.courseId
+                            </td>
+                            <td>
+                                @item.courseName
+                            </td>
+                            <td>
+                                @item.offering
+                            </td>
+                            <td>
+                                @item.credit
+                            </td>
+
+                        </tr>
+                    }
+
+                </table>
+               @Html.ActionLink("View Complete Recommendation", "semesterAdvisory", "Advisory")
+               
+               @using (Html.BeginForm())
+               {
+                  @Html.Label("Semester")
+                  @Html.DropDownList("semesterNo", (IEnumerable<SelectListItem>)ViewBag.semesterList, new { onchange = "form.submit();" })
+               }
+           </div>
+       

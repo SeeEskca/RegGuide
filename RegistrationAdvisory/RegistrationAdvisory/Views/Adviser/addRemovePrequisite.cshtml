@@ -1,0 +1,46 @@
+﻿@model RegistrationAdvisory.Models.PrereqAddDeleteModel
+
+@{
+    ViewBag.Title = "addRemovePrequisite";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Add / Remove Student's Prequisite</h2>
+<span style="color:red; font-size:large;">@ViewBag.error</span>
+<span style="color:forestgreen; font-size:large;">@ViewBag.status</span>
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>ADD-DELETE</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.studentId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.studentId, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.studentId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.courseCat, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.courseCat, Model.courseCats, "Select Course ID", new { htmlAttributes = new { @class = "form-control" } })
+                @*@Html.ValidationMessageFor(model => model.courseCat, "", new { @class = "text-danger" })*@
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" name="cmd" value="Add Pre-requisite" class="btn btn-default" />
+                <input type="submit" name="cmd" value="Delete Pre-requisite" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to Control Panel", "Panel", "Adviser")
+</div>

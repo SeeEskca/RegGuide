@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "getStudentInfo";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Student Basic Information</h2>
+<hr/>
+<table class="table table-striped">
+    <tr style="font-size:large;"><td>Student ID</td><td>@ViewBag.studentId</td></tr>
+    <tr style="font-size:large;" ><td>Student Name</td><td>@ViewBag.studentName</td></tr>
+    <tr style="font-size:large;"><td>Department</td><td>@ViewBag.department</td></tr>
+    <tr style="font-size:large;"><td>Admit Year</td><td>@ViewBag.admitYear</td></tr>
+    <tr style="font-size:large;"><td>Expected Graduation Year</td><td>@ViewBag.gradYear</td></tr>
+    <tr style="font-size:large;"><td>Email</td><td>@ViewBag.email</td></tr>
+    
+</table>
+<hr/>
+<div>
+
+    @using (Html.BeginForm("Panel", "Adviser", FormMethod.Post))
+    {
+        @*resubmit student id being view by admin to enable navigation back to summary page*@
+        <input type="text" value="@RegistrationAdvisory.Models.UserSession.STUDENTINSUMMARY" hidden name="id" />
+        <input type="submit" value="Back to Summary Page" class="btn btn-link" />
+    }
+
+</div>
+

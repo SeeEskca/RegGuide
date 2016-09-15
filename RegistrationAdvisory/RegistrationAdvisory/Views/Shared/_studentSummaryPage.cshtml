@@ -1,0 +1,411 @@
+﻿
+@{
+    ViewBag.Title = "Progress Summay For: ";
+}
+<h3>@ViewBag.department</h3>
+<h4>@ViewBag.Title</h4>
+<h2>@ViewBag.studentName</h2>
+
+<div>
+    @Html.ActionLink("Back to Control Panel", "Panel", "Adviser")
+</div>
+<hr />
+<div>
+    @Html.ActionLink("View Pending Prerequisite(s)", "studentPreRequisite", "Advisory")<br/>
+    @Html.ActionLink("View Registration Status", "RegStatus", "Advisory")<br />
+    @Html.ActionLink("View Student Information", "getStudentInfo", "Adviser")<br />
+    @Html.ActionLink("View Student Credit Summary", "getStudentSummaryDetails", "Adviser")
+
+</div>
+
+
+
+<div>
+    <table  class="table-bordered">
+        <tr>
+            <td>
+                <table class=" table-striped table-bordered table-condensed" width="450">
+                    <tr><td colspan="4"><h3>Semester 1</h3></td></tr>
+                    <tr>
+                        <th>
+                            Course ID
+                        </th>
+                        <th>
+                            Course Name
+                        </th>
+                        <th>
+                            Credit
+                        </th>
+                        <th>
+                            Grade
+                        </th>
+                        @*<th>
+                            &nbsp;
+                        </th>*@
+
+                    </tr>
+
+                    @foreach (var item in ViewBag.summary1)
+                    {
+
+                        <tr style="@(item.repeatCourse==1 ? "font-weight:bolder;color:red;font-size:large;" : string.Empty)">
+
+                            <td>
+                                @item.courseId
+                            </td>
+                            <td>
+                                @item.courseName
+                            </td>
+                            <td>
+                                @item.credit
+                            </td>
+                            <td style="@(item.repeatCourse==1 ? "background-color:red;color:white;font-size:large;" : string.Empty)">
+                                @item.grade
+                            </td>
+
+
+                        </tr>
+                    }
+
+                </table>
+            </td>
+            <td>
+                <table class=" table-striped table-bordered table-condensed" width="450">
+                    <tr><td colspan="4"><h3>Semester 2</h3></td></tr>
+                    <tr>
+                        <th>
+                            Course ID
+                        </th>
+                        <th>
+                            Course Name
+                        </th>
+                        <th>
+                            Credit
+                        </th>
+                        <th>
+                            Grade
+                        </th>
+                        
+
+                    </tr>
+
+                    @foreach (var item in ViewBag.summary2)
+                    {
+                        <tr style="@(item.repeatCourse==1 ? "font-weight:bolder;color:red;font-size:large;" : string.Empty)">
+
+                            <td>
+                                @item.courseId
+                            </td>
+                            <td>
+                                @item.courseName
+                            </td>
+                            <td>
+                                @item.credit
+                            </td>
+                            <td style="@(item.repeatCourse==1 ? "background-color:red;color:white;font-size:large;" : string.Empty)">
+                                @item.grade
+                            </td>
+
+
+                        </tr>
+                    }
+
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <table class=" table-striped table-bordered table-condensed" width="450">
+                    <tr><td colspan="4"><h3>Semester 3</h3></td></tr>
+                    <tr>
+                        <th>
+                            Course ID
+                        </th>
+                        <th>
+                            Course Name
+                        </th>
+                        <th>
+                            Credit
+                        </th>
+                        <th>
+                            Grade
+                        </th>
+                        
+
+                    </tr>
+
+                    @foreach (var item in ViewBag.summary3)
+                    {
+                        <tr style="@(item.repeatCourse==1 ? "font-weight:bolder;color:red;font-size:large;" : string.Empty)">
+
+                            <td>
+                                @item.courseId
+                            </td>
+                            <td>
+                                @item.courseName
+                            </td>
+                            <td>
+                                @item.credit
+                            </td>
+                            <td style="@(item.repeatCourse==1 ? "background-color:red;color:white;font-size:large;" : string.Empty)">
+                                @item.grade
+                            </td>
+
+
+                        </tr>
+                    }
+                    @if (ViewBag.department == "Computer Engineering")/*table row padding*/
+                    {
+                        <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+                    }
+
+                </table>
+            </td>
+            <td>
+                <table class="table-striped table-bordered table-condensed" width="450">
+                    <tr><td colspan="4"><h3>Semester 4</h3></td></tr>
+                    <tr>
+                        <th>
+                            Course ID
+                        </th>
+                        <th>
+                            Course Name
+                        </th>
+                        <th>
+                            Credit
+                        </th>
+                        <th>
+                            Grade
+                        </th>
+                        
+
+                    </tr>
+
+                    @foreach (var item in ViewBag.summary4)
+                    {
+                                                
+                        <tr style="@(item.repeatCourse==1 ? "font-weight:bolder;color:red;font-size:large;" : string.Empty)">
+                       
+                        <td>
+                            @item.courseId
+                        </td>
+                            <td>
+                                @item.courseName
+                            </td>
+                            <td>
+                                @item.credit
+                            </td>
+                            <td style="@(item.repeatCourse==1 ? "background-color:red;color:white;font-size:large;" : string.Empty)">
+                                @item.grade
+                            </td>
+                            
+
+                       </tr>
+                    }
+
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <table class=" table-striped table-bordered table-condensed" width="450">
+                    <tr><td colspan="4"><h3>Semester 5</h3></td></tr>
+                    <tr>
+                        <th>
+                            Course ID
+                        </th>
+                        <th>
+                            Course Name
+                        </th>
+                        <th>
+                            Credit
+                        </th>
+                        <th>
+                            Grade
+                        </th>
+                       
+
+                    </tr>
+
+                    @foreach (var item in ViewBag.summary5)
+                    {
+                        <tr style="@(item.repeatCourse==1 ? "font-weight:bolder;color:red;font-size:large;" : string.Empty)">
+
+                            <td>
+                                @item.courseId
+                            </td>
+                            <td>
+                                @item.courseName
+                            </td>
+                            <td>
+                                @item.credit
+                            </td>
+                            <td style="@(item.repeatCourse==1 ? "background-color:red;color:white;font-size:large;" : string.Empty)">
+                                @item.grade
+                            </td>
+
+
+                        </tr>
+                    }
+
+                    @if (ViewBag.department == "Computer Engineering")
+                    {
+                        <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                       
+                    }
+
+                </table>
+            </td>
+            <td>
+                <table class=" table-striped table-bordered table-condensed" width="450">
+                    <tr><td colspan="4"><h3>Semester 6</h3></td></tr>
+                    <tr>
+                        <th>
+                            Course ID
+                        </th>
+                        <th>
+                            Course Name
+                        </th>
+                        <th>
+                            Credit
+                        </th>
+                        <th>
+                            Grade
+                        </th>
+                       
+
+                    </tr>
+
+                    @foreach (var item in ViewBag.summary6)
+                    {
+                        <tr style="@(item.repeatCourse==1 ? "font-weight:bolder;color:red;font-size:large;" : string.Empty)">
+
+                            <td>
+                                @item.courseId
+                            </td>
+                            <td>
+                                @item.courseName
+                            </td>
+                            <td>
+                                @item.credit
+                            </td>
+                            <td style="@(item.repeatCourse==1 ? "background-color:red;color:white;font-size:large;" : string.Empty)">
+                                @item.grade
+                            </td>
+
+
+                        </tr>
+                    }
+
+                    @if (ViewBag.department == "Computer Science")
+                    {
+                        <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                       
+                    }
+
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <table class=" table-striped table-bordered table-condensed" width="450">
+                    <tr><td colspan="4"><h3>Semester 7</h3></td></tr>
+                    <tr>
+                        <th>
+                            Course ID
+                        </th>
+                        <th>
+                            Course Name
+                        </th>
+                        <th>
+                            Credit
+                        </th>
+                        <th>
+                            Grade
+                        </th>
+                       
+
+                    </tr>
+
+                    @foreach (var item in ViewBag.summary7)
+                    {
+                        <tr style="@(item.repeatCourse==1 ? "font-weight:bolder;color:red;font-size:large;" : string.Empty)">
+
+                            <td>
+                                @item.courseId
+                            </td>
+                            <td>
+                                @item.courseName
+                            </td>
+                            <td>
+                                @item.credit
+                            </td>
+                            <td style="@(item.repeatCourse==1 ? "background-color:red;color:white;font-size:large;" : string.Empty)">
+                                @item.grade
+                            </td>
+
+
+                        </tr>
+                    }
+                    @if (ViewBag.department == "Computer Science")
+                    {
+                        <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                        <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                    }
+
+                </table>
+            </td>
+            <td>
+                <table class=" table-striped table-bordered table-condensed" width="450">
+                    <tr><td colspan="4"><h3>Semester 8</h3></td></tr>
+                    <tr>
+                        <th>
+                            Course ID
+                        </th>
+                        <th>
+                            Course Name
+                        </th>
+                        <th>
+                            Credit
+                        </th>
+                        <th>
+                            Grade
+                        </th>
+                       
+
+                    </tr>
+
+                    @foreach (var item in ViewBag.summary8)
+                    {
+                        <tr style="@(item.repeatCourse==1 ? "font-weight:bolder;color:red;font-size:large;" : string.Empty)">
+
+                            <td>
+                                @item.courseId
+                            </td>
+                            <td>
+                                @item.courseName
+                            </td>
+                            <td>
+                                @item.credit
+                            </td>
+                            <td style="@(item.repeatCourse==1 ? "background-color:red;color:white;font-size:large;" : string.Empty)">
+                                @item.grade
+                            </td>
+
+
+                        </tr>
+                    }
+                    @if (ViewBag.department == "Computer Engineering")
+                    {
+                        <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                        <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                    }
+
+                </table>
+            </td>
+        </tr>
+
+
+    </table>
+</div>
