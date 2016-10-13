@@ -71,7 +71,7 @@ namespace RegistrationAdvisory.Controllers
                 //fetch registered courses
                 registrationStatus = ibzadv.getRegisteredCourseGradeStatus(id);
 
-                for (int i = 1; i < 9; i++)//generate semester reports
+                for (int i = 1; i < 9; i++)//generate semester reports for four academic years
                 {
                     courseBySemester = ibzadv.getCourseBySemester(i, deptid);
                     completedcoursesBySemester = ibzadv.getStudentGradeBySemester(i, id, deptid);
@@ -140,7 +140,7 @@ namespace RegistrationAdvisory.Controllers
             
 
             var model = new DeleteModifyModel();
-            model.courseCats = courseTypes(getCourseType());
+            model.courseCats = courseTypes(getCourseType());//populate course category dropdown list box
             return View(model);
         }
 
