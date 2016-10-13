@@ -39,7 +39,7 @@ namespace RegistrationAdvisory.Controllers
             {
                 try
                 {
-                    if (ibizAuth.SignIn(model.StudentId, model.Password, false))
+                    if (ibizAuth.SignIn(model.StudentId, model.Password, false))//bolean for remember me checkbox
                     {
                         //get user roleid
                         int roleId = Int32.Parse(UserSession.USERROLE);
