@@ -1,5 +1,8 @@
 pipeline{
   agent any
+  tools{
+    gradle 'Gradle-8.0-milestone-1'
+  }
   stages{
     stage("Run front end"){
       steps{
@@ -12,9 +15,9 @@ pipeline{
      stage("Run Back end"){
       steps{
         echo 'executing gradle...'
-        withGradle(){
-          //sh './gradle -v'
-        }
+       // withGradle(){
+          sh './gradle -v'
+        //}
       }
     }
   }
